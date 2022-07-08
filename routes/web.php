@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,6 @@ use App\Http\Controllers\EmployeeController;
 Route::get('/', [AttendanceController::class, 'index']);
 Route::get('/employee', [EmployeeController::class, 'index']);
 Route::get('/employee/payroll', [EmployeeController::class, 'payroll']);
+Route::get('/admin',[AdminController::class,'index']);
 
 Route::post('/capture', [AttendanceController::class, 'timeIn'])->name('webcam.capture');
